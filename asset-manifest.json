@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/tender/static/css/main.3aad3956.css",
+    "main.js": "/tender/static/js/main.834fdd88.js",
+    "static/media/JamesMcPhilemy.jpeg": "/tender/static/media/JamesMcPhilemy.4f05ed95da3fe6228036.jpeg",
+    "static/media/location.png": "/tender/static/media/location.a405c2668c55f74c09be.png",
+    "index.html": "/tender/index.html",
+    "main.3aad3956.css.map": "/tender/static/css/main.3aad3956.css.map",
+    "main.834fdd88.js.map": "/tender/static/js/main.834fdd88.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3aad3956.css",
+    "static/js/main.834fdd88.js"
+  ]
+}
