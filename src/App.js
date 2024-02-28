@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import IssueForm from "./components/IssueForm";
+import Home from "./components/Home";
+// import Dashboard from "./components/Dashboard";
+import React, { useState, useEffect } from 'react';
+// import { getDinosaurs } from "./services/services";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
+
+  // const [issues, setIssues] = useState([]);
+
+  // useEffect(() => {
+  //   getDinosaurs().then((data) => {
+  //     setIssues(data);
+  //   });
+  // }, []);
+
+  // console.log(issues);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/bins" element={<IssueForm category="bins" />} />
+          <Route path="/grass" element={<IssueForm category="grass" />} />
+          <Route path="/roads" element={<IssueForm category="roads" />} />
+          <Route path="/lights" element={<IssueForm category="lights" />} />
+          <Route path="/other" element={<IssueForm category="other" />} />
+          {/* <Route path="/dashboard" element={<Dashboard issues={issues} setIssues={setIssues} />} /> */}
+        </Routes>
+      </Router>
+
     </div>
   );
 }
