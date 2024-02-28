@@ -1,9 +1,10 @@
 import IssueForm from "./components/IssueForm";
 import Home from "./components/Home";
+// import Nothing from "./components/Nothing";
 // import Dashboard from "./components/Dashboard";
 import React, { useState, useEffect } from 'react';
 // import { getDinosaurs } from "./services/services";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
 
@@ -19,19 +20,16 @@ function App() {
 
   return (
     <div>
-
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/bins" element={<IssueForm category="bins" />} />
-          <Route path="/grass" element={<IssueForm category="grass" />} />
-          <Route path="/roads" element={<IssueForm category="roads" />} />
-          <Route path="/lights" element={<IssueForm category="lights" />} />
-          <Route path="/other" element={<IssueForm category="other" />} />
-          {/* <Route path="/dashboard" element={<Dashboard issues={issues} setIssues={setIssues} />} /> */}
-        </Routes>
-      </Router>
-
+      {/* <Nothing /> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/bins" element={<IssueForm category="bins" />} />
+        <Route path="/grass" element={<IssueForm category="grass" />} />
+        <Route path="/roads" element={<IssueForm category="roads" />} />
+        <Route path="/lights" element={<IssueForm category="lights" />} />
+        <Route path="/other" element={<IssueForm category="other" />} />
+        {/* <Route path="/dashboard" element={<Dashboard issues={issues} setIssues={setIssues} />} /> */}
+      </Routes>
     </div>
   );
 }
