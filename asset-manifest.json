@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/tender/static/css/main.6d08ae76.css",
-    "main.js": "/tender/static/js/main.4cf86dbc.js",
+    "main.css": "/tender/static/css/main.b962a3d6.css",
+    "main.js": "/tender/static/js/main.d14a2d0d.js",
     "static/media/JamesMcPhilemy.png": "/tender/static/media/JamesMcPhilemy.08e3e3697887fd03589d.png",
     "static/media/location.png": "/tender/static/media/location.a405c2668c55f74c09be.png",
     "index.html": "/tender/index.html",
-    "main.6d08ae76.css.map": "/tender/static/css/main.6d08ae76.css.map",
-    "main.4cf86dbc.js.map": "/tender/static/js/main.4cf86dbc.js.map"
+    "main.b962a3d6.css.map": "/tender/static/css/main.b962a3d6.css.map",
+    "main.d14a2d0d.js.map": "/tender/static/js/main.d14a2d0d.js.map"
   },
   "entrypoints": [
-    "static/css/main.6d08ae76.css",
-    "static/js/main.4cf86dbc.js"
+    "static/css/main.b962a3d6.css",
+    "static/js/main.d14a2d0d.js"
   ]
 }
