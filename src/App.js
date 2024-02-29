@@ -1,6 +1,5 @@
 import IssueForm from "./components/IssueForm";
 import Home from "./components/Home";
-// import Nothing from "./components/Nothing";
 // import Dashboard from "./components/Dashboard";
 import React, { useState, useEffect } from 'react';
 // import { getDinosaurs } from "./services/services";
@@ -20,7 +19,6 @@ function App() {
 
   return (
     <div>
-      {/* <Nothing /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/bins" element={<IssueForm category="bins" />} />

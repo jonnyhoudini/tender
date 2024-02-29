@@ -6,10 +6,13 @@ import LeafletMap from './LeafletMap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+
 
 const IssueForm = ({ category }) => {
 
     const [showAlert, setShowAlert] = useState(false);
+    const [showForm, setShowForm] = useState(true);
 
     const [formData, setFormData] = useState({
         name: "",
@@ -89,68 +92,71 @@ const IssueForm = ({ category }) => {
 
             <div className="content-wrapper">
 
-
-                <div id="form-container">
-                    <div className="close-button" onClick={() => navigate('/')}>{close}</div>
-
-                    <p id='info'>Please select the location on the map and provide details about the issue.</p>
-
-                    {showAlert &&
-                        <Alert variant="dark" onClose={() => setShowAlert(false)} dismissible>
-                            Your report has been sent to Cllr James McPhilemy. Thank you for your help!
-                        </Alert>
-                    }
-
-                    <Form onSubmit={onSubmit} id="issue-form">
-                        <Form.Group>
-                            <Form.Control
-                                onChange={onChange}
-                                type="text"
-                                id="name"
-                                name="name"
-                                required
-                                placeholder="Your Name"
-                                value={formData.name}
-                            />
-                        </Form.Group>
-
-                        <Form.Group>
-                            <Form.Control
-                                as="textarea"
-                                onChange={onChange}
-                                id="description"
-                                name="description"
-                                value={formData.description}
-                                placeholder="Describe the issue..."
-                                rows="4"
-                                required
-                            />
-                        </Form.Group>
-
-                        <Form.Group controlId="formFile" className="mb-3">
-                            <Form.Label>Upload Image</Form.Label>
-                            <Form.Control type="file" onChange={handleFileChange} />
-                        </Form.Group>
-
-                        <Form.Group>
-                            <Form.Control
-                                onChange={onChange}
-                                type="email"
-                                id="email"
-                                placeholder="Your Email"
-                                name="email"
-                                required
-                                value={formData.email}
-                            />
-                        </Form.Group>
-                        <div id="buttons-container">
-                            <Button type="submit" id="save" className="formheader send-button">{plane} Send</Button>
+                {showForm &&
+                    <div id="form-container">
+                        <div className="close-button" onClick={() => setShowForm(false)}>                <FontAwesomeIcon icon={faBars} style={{ fontSize: '24px' }} />
                         </div>
-                    </Form>
 
-                </div>
+                        <p id='info'>Please select the location on the map and provide details about the issue.</p>
+
+                        {showAlert &&
+                            <Alert variant="dark" onClose={() => setShowAlert(false)} dismissible>
+                                Your report has been sent to Cllr James McPhilemy. Thank you for your help!
+                            </Alert>
+                        }
+
+                        <Form onSubmit={onSubmit} id="issue-form">
+                            <Form.Group>
+                                <Form.Control
+                                    onChange={onChange}
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    required
+                                    placeholder="Your Name"
+                                    value={formData.name}
+                                />
+                            </Form.Group>
+
+                            <Form.Group>
+                                <Form.Control
+                                    onChange={onChange}
+                                    type="email"
+                                    id="email"
+                                    placeholder="Your Email"
+                                    name="email"
+                                    required
+                                    value={formData.email}
+                                />
+                            </Form.Group>
+
+                            <Form.Group>
+                                <Form.Control
+                                    as="textarea"
+                                    onChange={onChange}
+                                    id="description"
+                                    name="description"
+                                    value={formData.description}
+                                    placeholder="Describe the issue..."
+                                    rows="4"
+                                    required
+                                />
+                            </Form.Group>
+
+                            <Form.Group controlId="formFile" className="mb-3">
+                                <Form.Control type="file" onChange={handleFileChange} />
+                            </Form.Group>
+
+                            <div id="buttons-container">
+                                <Button type="submit" id="save" className="formheader send-button">{plane} <span className="send-text">Send</span></Button>
+                                <Button id="cancel" className="send-button" onClick={() => navigate('/')}>Cancel</Button>
+                            </div>
+                        </Form>
+
+                    </div>
+                }
                 <div id="map-container">
-                    <LeafletMap formData={formData} setFormData={setFormData} />
+                    <LeafletMap formData={formData} setFormData={setFormData} setShowForm={setShowForm} showForm={showForm} />
                 </div>
             </div>
         </>

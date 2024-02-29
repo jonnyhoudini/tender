@@ -4,7 +4,7 @@ import 'leaflet/dist/leaflet.css'
 import { Icon } from 'leaflet'
 import LocationMarker from './LocationMarker'
 
-const LeafletMap = ({ formData, setFormData }) => {
+const LeafletMap = ({ formData, setFormData, setShowForm, showForm }) => {
 
     return (
         <div>
@@ -12,7 +12,7 @@ const LeafletMap = ({ formData, setFormData }) => {
                 <TileLayer
                     url="https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png"
                 />
-                <LocationMarker formData={formData} setFormData={setFormData} />
+                <LocationMarker formData={formData} setFormData={setFormData} setShowForm={setShowForm} showForm={showForm} />
             </MapContainer>
         </div>
     )

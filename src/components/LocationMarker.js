@@ -5,9 +5,10 @@ import L from 'leaflet'
 import { Icon } from 'leaflet'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationCrosshairs } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 
-const LocationMarker = ({ formData, setFormData }) => {
+const LocationMarker = ({ formData, setFormData, setShowForm, showForm }) => {
 
     //component to place marker on map at user's location
 
@@ -50,7 +51,11 @@ const LocationMarker = ({ formData, setFormData }) => {
     }
 
     return (
-        <>
+        <>  {showForm === true ? null :
+            <button className="show-button" onClick={() => setShowForm(true)}>
+                <FontAwesomeIcon icon={faBars} style={{ fontSize: '24px' }} />
+            </button>
+        }
             <button onClick={findMe} className="locate-button" aria-label="Find Me">
                 <FontAwesomeIcon icon={faLocationCrosshairs} style={{ fontSize: '24px' }} />
             </button>

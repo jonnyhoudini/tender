@@ -4,6 +4,8 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  -webkit-text-size-adjust: none;
+  color: #333;
 }
 
 #info {
@@ -32,6 +34,8 @@ body {
   width: 100px;
   /* Adjust as needed */
   height: auto;
+  border-radius: 50%;
+  border: 2px solid #000;
 }
 
 #socials {
@@ -179,14 +183,14 @@ Link {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   height: 100%;
+  gap: 10px;
 }
 
 #issue-form input,
 #issue-form textarea {
   width: 100%;
-  padding: 10px;
+  /* padding: 10px; */
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -359,11 +363,12 @@ th:after {
   width: 100%;
 }
 
-.locate-button {
+.show-button {
   position: absolute;
   left: 10px;
   /* Adjust based on the width of the zoom controls if necessary */
-  bottom: 10px;
+  top: 115px;
+  width: 35px;
   /* Start with the height of the zoom controls + desired spacing */
   z-index: 1000;
   /* Ensure this is higher than the map's container */
@@ -373,6 +378,82 @@ th:after {
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+}
+
+.locate-button {
+  position: absolute;
+  left: 10px;
+  /* Adjust based on the width of the zoom controls if necessary */
+  top: 75px;
+  /* Start with the height of the zoom controls + desired spacing */
+  width: 35px;
+  z-index: 1000;
+  /* Ensure this is higher than the map's container */
+  background-color: white;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+/* input[type=file] {
+  margin-left: -2px !important;
+}
+
+input[type=file]::-webkit-file-upload-button {
+  display: none;
+}
+
+input[type=file]::file-selector-button {
+  display: none;
+}
+
+.custom-file-button:hover label {
+  background-color: #dde0e3;
+  cursor: pointer;
+} */
+
+input[type="file"].form-control::file-selector-button {
+  display: none;
+}
+
+input[type="file"].form-control::before {
+  content: attr(value) "Upload photo";
+  /*<-- any text you want */
+  background-color: #e9ecef;
+  border: 0 solid;
+  border-color: inherit;
+  border-inline-end-width: 1px;
+  border-radius: 0;
+  color: #212529;
+  padding: 0.5rem 1rem;
+  margin: -0.5rem -1rem;
+  margin-inline-end: 1rem;
+  pointer-events: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+input[type="file"].form-control.form-control-lg::before {
+  padding: 0.75rem 1rem;
+  margin: -0.75rem -1rem;
+  margin-inline-end: 1rem;
+}
+
+@media (max-width: 814px) {
+  .send-text {
+    display: none;
+  }
+
+  input[type="file"] {
+    color: transparent;
+  }
+
+  input[type="file"].form-control::before {
+    content: attr(value) "Photo";
+  }
+
 }
 
 /* Responsive table for smaller screens */
