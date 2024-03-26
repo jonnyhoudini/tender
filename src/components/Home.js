@@ -35,6 +35,8 @@ const Home = () => {
                     <Link to="/grass"><button><span className="icon">🌱</span>Grass</button></Link>
                     <Link to="/roads"><button><span className="icon">🛣️</span>Roads</button></Link>
                     <Link to="/lights"><button><span className="icon">💡</span>Street Lights</button></Link>
+                    <Link to="/housing"><button><span className="icon">🏠</span>Housing</button></Link>
+                    <Link to="/facilities"><button><span className="icon">🏫</span>Community Facilities</button></Link>
                     <Link to="/other"><button><span className="icon">❓</span>Other</button></Link>
                 </div>
             </div>

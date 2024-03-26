@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 // import { postDinosaur, getAddress } from '../services/services';
 import { useNavigate } from 'react-router-dom';
-import { Alert, Form, Button, InputGroup, FormControl } from 'react-bootstrap';
+import { Alert, Form, Button, InputGroup, FormControl, FormSelect } from 'react-bootstrap';
 import LeafletMap from './LeafletMap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-
 
 const IssueForm = ({ category }) => {
 
@@ -21,7 +20,8 @@ const IssueForm = ({ category }) => {
         location: "",
         email: "",
         address: "",
-        map: ""
+        map: "",
+        housingtype: ""
     })
 
     const [selectedFile, setSelectedFile] = useState(null);
@@ -80,7 +80,8 @@ const IssueForm = ({ category }) => {
             },
             email: "",
             address: "",
-            map: ""
+            map: "",
+            housingtype: ""
         });
     }
 
@@ -129,6 +130,22 @@ const IssueForm = ({ category }) => {
                                     value={formData.email}
                                 />
                             </Form.Group>
+
+                            {category === 'housing' &&
+                                <Form.Group>
+                                    <Form.Select
+                                        onChange={onChange} // Add the onChange function here
+                                        id="tenancyType" // Add an id to identify the select element
+                                        name="tenancyType" // Add a name to identify the select element
+                                        value={formData.tenancyType} // Set the value to the corresponding state value
+                                    >
+                                        <option>Choose type of tenancy</option>
+                                        <option value="1">Council</option>
+                                        <option value="2">Housing Association</option>
+                                        <option value="3">Private</option>
+                                    </Form.Select>
+                                </Form.Group>
+                            }
 
                             <Form.Group>
                                 <Form.Control

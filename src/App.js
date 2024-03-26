@@ -26,6 +26,8 @@ function App() {
         <Route path="/roads" element={<IssueForm category="roads" />} />
         <Route path="/lights" element={<IssueForm category="lights" />} />
         <Route path="/other" element={<IssueForm category="other" />} />
+        <Route path="/housing" element={<IssueForm category="housing" />} />
+        <Route path="/facilities" element={<IssueForm category="facilities" />} />
         {/* <Route path="/dashboard" element={<Dashboard issues={issues} setIssues={setIssues} />} /> */}
       </Routes>
     </div>
