@@ -1,4 +1,5 @@
 const baseURL = 'https://parklife-delta.vercel.app/reports/';
+// const baseURL = 'http://localhost:3000/reports/';
 const geoCodingURL = 'https://geocode.maps.co/reverse?';
 
 export const getAddress = (lat, lng) => {
@@ -15,7 +16,11 @@ export const postReport = (formData) => {
     console.log('payload', formData);
     return fetch(baseURL, {
         method: 'POST',
-        body: formData,
+        //using json so need to add headers. Can be removed if we switch to form data
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
     })
         .then(res => res.json())
 }

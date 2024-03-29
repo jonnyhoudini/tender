@@ -43,7 +43,7 @@ const IssueForm = ({ category }) => {
     const onSubmit = (e) => {
         e.preventDefault();
         console.log('formData', formData);
-        const tempFormData = formData;
+        // const tempFormData = formData;
 
         // const newFormData = new FormData();
 
@@ -59,7 +59,7 @@ const IssueForm = ({ category }) => {
         //     console.log(key, value);
         // }
 
-        postReport(tempFormData).then((data) => {
+        postReport(formData).then((data) => {
             console.log('report sent', data);
             setShowAlert(true);
             setTimeout(() => {
