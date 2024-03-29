@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import { postDinosaur, getAddress } from '../services/services';
+import { postReport, getAddress } from '../services/services';
 import { useNavigate } from 'react-router-dom';
 import { Alert, Form, Button, InputGroup, FormControl, FormSelect } from 'react-bootstrap';
 import LeafletMap from './LeafletMap';
@@ -59,14 +59,14 @@ const IssueForm = ({ category }) => {
             console.log(key, value);
         }
 
-        // postDinosaur(newFormData).then((data) => {
-        //     console.log('report sent', data);
-        setShowAlert(true);
-        setTimeout(() => {
-            setShowAlert(false);
-            navigate('/');
-        }, 4000);
-        // });
+        postReport(newFormData).then((data) => {
+            console.log('report sent', data);
+            setShowAlert(true);
+            setTimeout(() => {
+                setShowAlert(false);
+                navigate('/');
+            }, 4000);
+        });
 
 
         // Reset the form input values   

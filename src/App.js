@@ -2,20 +2,20 @@ import IssueForm from "./components/IssueForm";
 import Home from "./components/Home";
 // import Dashboard from "./components/Dashboard";
 import React, { useState, useEffect } from 'react';
-// import { getDinosaurs } from "./services/services";
+import { getReports } from "./services/services";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
 
-  // const [issues, setIssues] = useState([]);
+  const [issues, setIssues] = useState([]);
 
-  // useEffect(() => {
-  //   getDinosaurs().then((data) => {
-  //     setIssues(data);
-  //   });
-  // }, []);
+  useEffect(() => {
+    getReports().then((data) => {
+      setIssues(data);
+    });
+  }, []);
 
-  // console.log(issues);
+  console.log(issues);
 
   return (
     <div>
