@@ -45,21 +45,21 @@ const IssueForm = ({ category }) => {
         console.log('formData', formData);
         const tempFormData = formData;
 
-        const newFormData = new FormData();
+        // const newFormData = new FormData();
 
-        Object.keys(tempFormData).forEach((key) => {
-            newFormData.append(key, tempFormData[key]);
-        });
+        // Object.keys(tempFormData).forEach((key) => {
+        //     newFormData.append(key, tempFormData[key]);
+        // });
 
-        if (selectedFile) {
-            newFormData.append('photo', selectedFile);
-        }
+        // if (selectedFile) {
+        //     newFormData.append('photo', selectedFile);
+        // }
 
-        for (let [key, value] of newFormData.entries()) {
-            console.log(key, value);
-        }
+        // for (let [key, value] of newFormData.entries()) {
+        //     console.log(key, value);
+        // }
 
-        postReport(newFormData).then((data) => {
+        postReport(tempFormData).then((data) => {
             console.log('report sent', data);
             setShowAlert(true);
             setTimeout(() => {
