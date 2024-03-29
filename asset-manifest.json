@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/tender/static/css/main.b233bee4.css",
-    "main.js": "/tender/static/js/main.332016bc.js",
+    "main.js": "/tender/static/js/main.8b6c60f6.js",
     "static/media/JamesMcPhilemy.png": "/tender/static/media/JamesMcPhilemy.08e3e3697887fd03589d.png",
     "static/media/location.png": "/tender/static/media/location.a405c2668c55f74c09be.png",
     "index.html": "/tender/index.html",
     "main.b233bee4.css.map": "/tender/static/css/main.b233bee4.css.map",
-    "main.332016bc.js.map": "/tender/static/js/main.332016bc.js.map"
+    "main.8b6c60f6.js.map": "/tender/static/js/main.8b6c60f6.js.map"
   },
   "entrypoints": [
     "static/css/main.b233bee4.css",
-    "static/js/main.332016bc.js"
+    "static/js/main.8b6c60f6.js"
   ]
 }
